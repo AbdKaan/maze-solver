@@ -3,10 +3,14 @@ from graphics import *
 
 def main():
     win = Window(800, 600)
-    win.draw_line(Line(Point(0, 0), Point(800, 600)), "black")
-    win.draw_line(Line(Point(50, 500), Point(400, 600)), "red")
-    win.draw_line(Line(Point(100, 690), Point(500, 500)), "blue")
-    win.draw_line(Line(Point(800, 0), Point(0, 600)), "purple")
+    cell = Cell(100, 200, 100, 200, win)
+    cell.draw()
+    cell_two = Cell(200, 300, 100, 200, win)
+    cell_two.draw()
+    cell_three = Cell(300, 400, 100, 200, win)
+    cell_three.draw()
+    cell_four = Cell(600, 400, 300, 600, win)
+    cell_four.draw()
     win.wait_for_close()
 
 main()
