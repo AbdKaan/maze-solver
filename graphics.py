@@ -1,5 +1,20 @@
 from tkinter import Tk, Canvas
 
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+class Line:
+    def __init__(self, start: Point, end: Point):
+        self.start = start
+        self.end = end
+    
+    def draw(self, canvas: Canvas, fill_color):
+        canvas.create_line(
+            self.start.x, self.start.y, self.end.x, self.end.y, fill=fill_color, width=2
+        )
+
 class Window:
     def __init__(self, width, height):
         self.__root = Tk()
@@ -24,3 +39,6 @@ class Window:
 
     def close(self):
         self.running = False
+
+    def draw_line(self, line: Line, fill_color):
+        line.draw(self.canvas, fill_color)
